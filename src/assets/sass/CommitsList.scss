@@ -1,0 +1,47 @@
+@import "./Variables.scss";
+
+.list {
+  &__content {
+    width: 1000px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    background: white;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16);
+  }
+
+  &__text {
+    color: $color_text;
+    margin: 0 16px;
+    flex: 1;
+  }
+
+  &--title {
+    margin: 0 0 4px 0;
+    font-weight: 500;
+  }
+
+  &--date {
+    color: $color_text;
+    align-self: flex-start;
+  }
+
+  &__header {
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background_light;
+    color: $color_text;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}

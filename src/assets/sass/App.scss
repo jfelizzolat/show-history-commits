@@ -10,14 +10,24 @@ body {
   font-weight: bold;
 }
 
+.layout {
+  display: grid;
+  grid-template-rows: 256px auto;
+}
+
 .avatar {
   &__image {
     border-radius: 100%;
-    box-shadow: 0 8px 12px $color_primary;
   }
   &--large {
     width: 136px;
     height: 136px;
+    box-shadow: 0 8px 12px $color_primary;
+  }
+  &--small {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 

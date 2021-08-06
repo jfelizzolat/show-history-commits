@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import CommitsList from "./CommitsList";
 
 const Container = () => {
   const data_user = {
@@ -11,9 +12,10 @@ const Container = () => {
     website: "https://jfelizzolat.dev",
   };
   return (
-    <>
+    <div className="layout">
       <Header data={data_user} />
-    </>
+      <CommitsList />
+    </div>
   );
 };
 

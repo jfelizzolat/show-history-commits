@@ -60,6 +60,9 @@ const Header = ({ data }) => {
           </button>
         </div>
       </div>
+      {/* <div className="header__list">
+        <span className="header__list--text">Listado de commits</span>
+      </div> */}
     </div>
   );
 };
