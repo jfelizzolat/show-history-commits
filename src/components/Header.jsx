@@ -34,7 +34,9 @@ const Header = ({ data }) => {
             </div>
             <div className="text">
               <label className="text__label">Email</label>
-              <span className="text__user">{email}</span>
+              <span className="text__user">
+                {email == null ? "jfelizzolat@mail.com" : email}
+              </span>
             </div>
             <div className="text">
               <label className="text__label">Sitio web</label>

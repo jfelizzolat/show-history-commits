@@ -1,20 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import CommitsList from "./CommitsList";
 
 const Container = () => {
-  const data_user = {
-    avatar:
-      "https://i1.wp.com/www.culturaldevoto.com.ar/wp-content/plugins/userswp/assets/images/no_profile.png?ssl=1",
-    name: "Jeffrey Felizzola Tapia",
-    username: "jfelizzolat",
-    email: "jfelizzolat@gmail.com ",
-    website: "https://jfelizzolat.dev",
+  const [userData, setUserData] = useState({});
+  const [dataCommits, setDataCommits] = useState([]);
+
+  const getUserData = async () => {
+    const response = await fetch("https://api.github.com/users/jfelizzolat");
+    if (response.ok) {
+      const result = await response.json();
+      setUserData({
+        avatar: result.avatar_url,
+        name: result.name,
+        username: result.login,
+        email: result.email,
+        website: result.blog,
+      });
+    }
   };
+
+  const getDataCommits = async () => {
+    const response = await fetch(
+      " https://api.github.com/repos/jfelizzolat/show-history-commits/commits"
+    );
+    if (response.ok) {
+      const result = await response.json();
+      // debugger;
+      // const data = result.map((item) => {
+      //   return item.commit;
+      // });
+      setDataCommits(result);
+    }
+  };
+
+  useEffect(() => {
+    // getUserData();
+    getDataCommits();
+  }, []);
+
   return (
     <div className="layout">
-      <Header data={data_user} />
-      <CommitsList />
+      <Header data={userData} />
+      <CommitsList data={dataCommits} />
     </div>
   );
 };

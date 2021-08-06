@@ -1,27 +1,34 @@
 import React from "react";
 import "../assets/sass/CommitsList.scss";
 
-const CommitsList = () => {
+const CommitsList = ({ data }) => {
   return (
     <div className="list">
       <ul className="list__content">
         <li className="list__item list__header">Listado de commits</li>
-        <li className="list__item">
-          <div className="avatar">
-            <img
-              src="https://i1.wp.com/www.culturaldevoto.com.ar/wp-content/plugins/userswp/assets/images/no_profile.png?ssl=1"
-              alt=""
-              className="avatar__image avatar--small"
-            />
-          </div>
-          <div className="list__text">
-            <p className="list--title">Mensaje del commit</p>
-            <span className="list--detail">
-              Nombre completo del autor del commit
-            </span>
-          </div>
-          <span className="list--date">06 de Agosto del 2021</span>
-        </li>
+        {data.map((item) => {
+          return (
+            <li className="list__item">
+              <div className="avatar">
+                <img
+                  src={item.committer.avatar_url}
+                  alt={item.commit.name}
+                  className="avatar__image avatar--small"
+                />
+              </div>
+              <div className="list__text">
+                <p className="list--title">{item.commit.message}</p>
+                <span className="list--detail">
+                  {item.committer.login} {" - "}
+                  <i>{item.commit.committer.name}</i>
+                </span>
+              </div>
+              <span className="list--date">
+                {new Date(item.commit.committer.date).toLocaleString()}
+              </span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
