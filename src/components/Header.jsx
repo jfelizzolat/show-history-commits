@@ -7,11 +7,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../assets/sass/Header.scss";
 
-const Header = ({ data, onClickRefresh }) => {
+const Header = ({ data, onClickRefresh, loading = false }) => {
   const { avatar, name, username, email, website } = data;
   const toggle_off = <FontAwesomeIcon icon={faToggleOff} />;
   const toggle_on = <FontAwesomeIcon icon={faToggleOn} />;
-  const refresh = <FontAwesomeIcon icon={faRedoAlt} />;
+  const refresh = loading ? (
+    <FontAwesomeIcon icon={faRedoAlt} spin />
+  ) : (
+    <FontAwesomeIcon icon={faRedoAlt} />
+  );
   return (
     <div className="header">
       <div className="header__content">
