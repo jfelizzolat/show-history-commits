@@ -7,10 +7,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../assets/sass/Header.scss";
 
-const Header = ({ data, onClickRefresh, loading = false }) => {
+const Header = ({ data, onClickRefresh, loading, darkMode, onDarkMode }) => {
   const { avatar, name, username, email, website } = data;
-  const toggle_off = <FontAwesomeIcon icon={faToggleOff} />;
-  const toggle_on = <FontAwesomeIcon icon={faToggleOn} />;
+  // const toggle_off = <FontAwesomeIcon icon={faToggleOff} />;
+  // const toggle_on = <FontAwesomeIcon icon={faToggleOn} />;
+  const toogle_darkmode = darkMode ? (
+    <FontAwesomeIcon icon={faToggleOn} />
+  ) : (
+    <FontAwesomeIcon icon={faToggleOff} />
+  );
   const refresh = loading ? (
     <FontAwesomeIcon icon={faRedoAlt} spin />
   ) : (
@@ -56,8 +61,8 @@ const Header = ({ data, onClickRefresh, loading = false }) => {
           </div>
         </div>
         <div className="header__actions">
-          <button type="button" className="toggle">
-            <div className="toggle__icon">{toggle_off}</div>
+          <button type="button" className="toggle" onClick={() => onDarkMode()}>
+            <div className="toggle__icon">{toogle_darkmode}</div>
             <span className="toggle__text">Dark mode</span>
           </button>
           <button

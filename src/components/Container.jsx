@@ -7,6 +7,7 @@ const Container = () => {
   const [userData, setUserData] = useState({});
   const [dataCommits, setDataCommits] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const getUserData = async () => {
     const response = await fetch("https://api.github.com/users/jfelizzolat");
@@ -46,6 +47,10 @@ const Container = () => {
     setLoading(false);
   };
 
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   useEffect(() => {
     getUserData();
     getDataCommits();
@@ -57,6 +62,8 @@ const Container = () => {
         data={userData}
         onClickRefresh={getDataCommits}
         loading={loading}
+        darkMode={darkMode}
+        onDarkMode={handleDarkMode}
       />
       <CommitsList data={dataCommits} />
     </div>

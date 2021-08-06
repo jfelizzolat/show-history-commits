@@ -1,6 +1,8 @@
-@import './Variables.scss';
+@import "./Variables.scss";
 
 .splash {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
