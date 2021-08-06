@@ -1,0 +1,7 @@
+@import "./Variables.scss";
+
+.header {
+  height: 296px;
+  background: $gradient_background;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}

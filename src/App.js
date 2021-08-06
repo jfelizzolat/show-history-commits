@@ -1,10 +1,10 @@
 import './assets/sass/App.scss';
-import Splash from './components/Splash';
+import Container from './components/Container';
 
 function App() {
   return (
     <>
-      <Splash />
+      <Container />
     </>
   );
 }
