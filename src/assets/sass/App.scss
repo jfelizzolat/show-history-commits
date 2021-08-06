@@ -37,3 +37,44 @@ body {
     }
   }
 }
+
+.btn {
+  font-family: $font_primary;
+  font-size: 16px;
+  background: $color_primary;
+  border: 2px solid $color_primary;
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: ease-in 0.2s;
+  cursor: pointer;
+
+  &__outline {
+    background: transparent;
+    border: 2px solid $color_text_alt;
+    color: $color_text_alt;
+    font-weight: 600;
+
+    &:hover {
+      background: rgba($color: $color_text_alt, $alpha: 0.15);
+    }
+  }
+
+  &--text-icon {
+    margin-right: 8px;
+  }
+}
+
+.toggle {
+  background: transparent;
+  border: none;
+  color: $color_text_alt;
+  cursor: pointer;
+
+  &__icon {
+    font-size: 20px;
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+}

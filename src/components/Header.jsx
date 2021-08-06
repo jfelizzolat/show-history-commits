@@ -1,8 +1,17 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faToggleOff,
+  faToggleOn,
+  faRedoAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import "../assets/sass/Header.scss";
 
 const Header = ({ data }) => {
   const { avatar, name, username, email, website } = data;
+  const toggle_off = <FontAwesomeIcon icon={faToggleOff} />;
+  const toggle_on = <FontAwesomeIcon icon={faToggleOn} />;
+  const refresh = <FontAwesomeIcon icon={faRedoAlt} />;
   return (
     <div className="header">
       <div className="header__content">
@@ -40,7 +49,16 @@ const Header = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="header__actions"></div>
+        <div className="header__actions">
+          <button type="button" className="toggle">
+            <div className="toggle__icon">{toggle_off}</div>
+            <span className="toggle__text">Dark mode</span>
+          </button>
+          <button type="button" className="btn btn__outline">
+            <span className="btn--text-icon">Cargar commits</span>
+            {refresh}
+          </button>
+        </div>
       </div>
     </div>
   );
