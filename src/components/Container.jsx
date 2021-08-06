@@ -26,22 +26,18 @@ const Container = () => {
     );
     if (response.ok) {
       const result = await response.json();
-      // debugger;
-      // const data = result.map((item) => {
-      //   return item.commit;
-      // });
       setDataCommits(result);
     }
   };
 
   useEffect(() => {
-    // getUserData();
+    getUserData();
     getDataCommits();
   }, []);
 
   return (
     <div className="layout">
-      <Header data={userData} />
+      <Header data={userData} onClickRefresh={getDataCommits} />
       <CommitsList data={dataCommits} />
     </div>
   );

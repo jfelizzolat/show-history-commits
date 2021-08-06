@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../assets/sass/Header.scss";
 
-const Header = ({ data }) => {
+const Header = ({ data, onClickRefresh }) => {
   const { avatar, name, username, email, website } = data;
   const toggle_off = <FontAwesomeIcon icon={faToggleOff} />;
   const toggle_on = <FontAwesomeIcon icon={faToggleOn} />;
@@ -56,15 +56,16 @@ const Header = ({ data }) => {
             <div className="toggle__icon">{toggle_off}</div>
             <span className="toggle__text">Dark mode</span>
           </button>
-          <button type="button" className="btn btn__outline">
+          <button
+            type="button"
+            className="btn btn__outline"
+            onClick={() => onClickRefresh()}
+          >
             <span className="btn--text-icon">Cargar commits</span>
             {refresh}
           </button>
         </div>
       </div>
-      {/* <div className="header__list">
-        <span className="header__list--text">Listado de commits</span>
-      </div> */}
     </div>
   );
 };

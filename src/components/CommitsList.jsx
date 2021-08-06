@@ -8,7 +8,7 @@ const CommitsList = ({ data }) => {
         <li className="list__item list__header">Listado de commits</li>
         {data.map((item) => {
           return (
-            <li className="list__item">
+            <li key={item.node_id} className="list__item">
               <div className="avatar">
                 <img
                   src={item.committer.avatar_url}
