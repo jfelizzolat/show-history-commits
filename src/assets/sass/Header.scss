@@ -4,4 +4,29 @@
   height: 296px;
   background: $gradient_background;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  &__content {
+    display: flex;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 16px;
+    column-gap: 32px;
+    margin-left: 16px;
+
+    .text:first-child {
+      grid-column: 1/-1;
+    }
+  }
 }

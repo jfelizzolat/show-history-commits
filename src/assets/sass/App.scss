@@ -9,3 +9,31 @@ body {
 .bold {
   font-weight: bold;
 }
+
+.avatar {
+  &__image {
+    border-radius: 100%;
+    box-shadow: 0 8px 12px $color_primary;
+  }
+  &--large {
+    width: 136px;
+    height: 136px;
+  }
+}
+
+.text {
+  color: $color_text_alt;
+  &__label {
+    display: block;
+    font-weight: 600;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color_text_alt;
+    transition: ease-in 0.2s;
+
+    &:hover {
+      color: $color_text;
+    }
+  }
+}
