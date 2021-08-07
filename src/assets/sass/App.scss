@@ -1,4 +1,5 @@
 @import "./Variables.scss";
+@import "./Mixins.scss";
 
 body {
   font-family: $font_primary;
@@ -12,7 +13,7 @@ body {
 
 .layout {
   display: grid;
-  grid-template-rows: 256px auto;
+  grid-template-rows: auto auto;
 }
 
 .avatar {
@@ -79,6 +80,7 @@ body {
   border: none;
   color: var(--color__text__alt);
   cursor: pointer;
+  align-self: flex-end;
 
   &__icon {
     font-size: 20px;
@@ -86,5 +88,12 @@ body {
 
   &__text {
     font-size: 12px;
+  }
+}
+
+@include desktop {
+  .layout {
+    display: grid;
+    grid-template-rows: 256px auto;
   }
 }
