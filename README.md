@@ -2,7 +2,8 @@
 
 En este proyecto busca listar el historial de commits del mismo utilizando la API de GitHub V3.
 
-####Instalación
+#### Instalación
+
 Para ejecutar este proyecto debes tener instalado node.js a partir de la version 12 y tener acceso a una terminal para ejecutar los siguientes comandos.
 
 ##### Para descargar las dependencias
@@ -13,7 +14,7 @@ _npm install_
 
 _npm start_
 
-####Tecnologías
+#### Tecnologías
 
 1. React 17 (_create-react-app_)
 2. SASS
