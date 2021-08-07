@@ -2,7 +2,7 @@
 
 .header {
   height: 296px;
-  background: $gradient_background;
+  background: var(--gradient__background);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 
   &__content {
@@ -41,10 +41,4 @@
     justify-content: space-between;
     padding-top: 80px;
   }
-
-  // &__list {
-  //   width: 1000px;
-  //   margin: 0 auto;
-  //   background: $background_light;
-  // }
 }

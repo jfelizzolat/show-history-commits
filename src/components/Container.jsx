@@ -7,7 +7,9 @@ const Container = () => {
   const [userData, setUserData] = useState({});
   const [dataCommits, setDataCommits] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   const getUserData = async () => {
     const response = await fetch("https://api.github.com/users/jfelizzolat");
@@ -52,9 +54,16 @@ const Container = () => {
   };
 
   useEffect(() => {
+    let body = document.body;
+    body.classList.add("theme");
+
+    darkMode
+      ? body.classList.add("theme--dark")
+      : body.classList.remove("theme--dark");
+
     getUserData();
     getDataCommits();
-  }, []);
+  }, [darkMode]);
 
   return (
     <div className="layout">

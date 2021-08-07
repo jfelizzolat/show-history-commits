@@ -11,7 +11,7 @@
   &__item {
     display: flex;
     align-items: center;
-    background: white;
+    background: var(--color__item);
     margin-bottom: 16px;
     padding: 16px;
     border-radius: 8px;
@@ -19,7 +19,7 @@
   }
 
   &__text {
-    color: $color_text;
+    color: var(--color__text);
     margin: 0 16px;
     flex: 1;
   }
@@ -30,7 +30,7 @@
   }
 
   &--date {
-    color: $color_text;
+    color: var(--color__text);
     align-self: flex-start;
   }
 
@@ -39,8 +39,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $background_light;
-    color: $color_text;
+    background: var(--color__background);
+    color: var(--color__text);
     font-weight: 500;
     font-size: 18px;
   }

@@ -28,3 +28,25 @@ $gradient_background_dark: linear-gradient(
   $color_primary_dark 0%,
   $color_secondary_dark 100%
 );
+
+// Modo Light
+.theme {
+  --color__primary: #{$color_primary};
+  --color__secondary: #{$color_secondary};
+  --color__text: #{$color_text};
+  --color__text__alt: #{$color_text_alt};
+  --color__background: #{$background_light};
+  --color__item: white;
+  --gradient__background: linear-gradient(100deg, #1aa7e5 0%, #5bc7f6 100%);
+
+  // Modo Dark
+  &--dark {
+    --color__primary: #{$color_primary_dark};
+    --color__secondary: #{$color_secondary_dark};
+    --color__text: #{$color_text_dark};
+    --color__text__alt: #{$color_text_dark};
+    --color__background: #{$background_dark};
+    --color__item: #{$color_secondary_dark};
+    --gradient__background: linear-gradient(100deg, #062533 0%, #0c4a66 100%);
+  }
+}

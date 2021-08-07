@@ -3,7 +3,7 @@
 body {
   font-family: $font_primary;
   font-size: 16px;
-  background: $background_light;
+  background: var(--color__background);
 }
 
 .bold {
@@ -22,7 +22,7 @@ body {
   &--large {
     width: 136px;
     height: 136px;
-    box-shadow: 0 8px 12px $color_primary;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   }
   &--small {
     width: 48px;
@@ -32,14 +32,14 @@ body {
 }
 
 .text {
-  color: $color_text_alt;
+  color: var(--color__text__alt);
   &__label {
     display: block;
     font-weight: 600;
   }
   &__link {
     text-decoration: none;
-    color: $color_text_alt;
+    color: var(--color__text__alt);
     transition: ease-in 0.2s;
 
     &:hover {
@@ -60,12 +60,12 @@ body {
 
   &__outline {
     background: transparent;
-    border: 2px solid $color_text_alt;
-    color: $color_text_alt;
+    border: 2px solid var(--color__text__alt);
+    color: var(--color__text__alt);
     font-weight: 600;
 
     &:hover {
-      background: rgba($color: $color_text_alt, $alpha: 0.15);
+      background: rgba($color: var(--color__text__alt), $alpha: 0.15);
     }
   }
 
@@ -77,7 +77,7 @@ body {
 .toggle {
   background: transparent;
   border: none;
-  color: $color_text_alt;
+  color: var(--color__text__alt);
   cursor: pointer;
 
   &__icon {
