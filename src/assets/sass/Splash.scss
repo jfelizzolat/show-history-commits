@@ -7,10 +7,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: $gradient_background;
+  background: var(--gradient__background);
   height: 100vh;
   transition: ease-in 0.25s;
-  color: $color_text_alt;
+  color: var(--color__text__alt);
 
   &__icon {
     font-size: 36px;

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import CommitsList from "./CommitsList";
+import Splash from "./Splash";
 import swal from "@sweetalert/with-react";
 
 const Container = () => {
   const [userData, setUserData] = useState({});
   const [dataCommits, setDataCommits] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
   const [darkMode, setDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
@@ -22,6 +24,7 @@ const Container = () => {
         email: result.email,
         website: result.blog,
       });
+      setShowSplash(false);
     } else {
       swal(
         "Oops!",
@@ -67,6 +70,7 @@ const Container = () => {
 
   return (
     <div className="layout">
+      {showSplash ? <Splash /> : null}
       <Header
         data={userData}
         onClickRefresh={getDataCommits}
